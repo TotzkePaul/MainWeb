@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  main.web:
+    image: main.web
+    build:
+      context: ./Main.Web
+      dockerfile: Dockerfile
