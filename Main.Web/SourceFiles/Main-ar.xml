@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="ar">
+  <texts>
+    <text name="HomePage" value="الصفحة الرئيسية" />
+    <text name="About" value="حول" />
+    <text name="WelcomeMessage" value="مرحبا بكم في الرئيسية!" />
+    
+    <text name="FormIsNotValidMessage" value="النموذج غير صالح، يرجى التحقق من الأخطاء وإصلاحها." />
+    
+
+    <text name="InvalidUserNameOrPassword" value="خطأ في اسم المستخدم أو كلمة مرور" />
+    <text name="UserIsNotActiveAndCanNotLogin" value="المستخدم {0} غير نشط ولا يمكنه تسجيل الدخول." />
+    <text name="PleaseEnterLoginInformation" value="الرجاء إدخال معلومات تسجيل الدخول" />
+    <text name="UserNameOrEmail" value="اسم المستخدم أو البريد الالكتروني" />
+    <text name="Password" value="Password" />
+    <text name="RememberMe" value="تذكرنى" />
+    <text name="LogIn" value="تسجيل الدخول" />
+
+    <text name="LoginFailed" value="فشل تسجيل الدخول!" />
+
+    <text name="NameSurname" value="اسم اللقب" />
+    <text name="UserName" value="اسم المستخدم" />
+    <text name="Name" value="نيم" />
+    <text name="Surname" value="لقب" />
+    <text name="EmailAddress" value="عنوان البريد الإلكتروني" />
+
+    <text name="SavedSuccessfully" value="حفظ بنجاح" />
+    <text name="AdminEmailAddress" value="عنوان البريد الإلكتروني للمشرف" />
+    <text name="Save" value="حفظ" />
+    <text name="Cancel" value="إلغاء" />
+    <text name="Register" value="تسجيل" />
+    <text name="OrLoginWith" value="أو الدخول مع" />
+    <text name="WaitingForActivationMessage" value="حسابك ينتظر حتى يتم تنشيطه من قبل مشرف النظام." />
+
+    <text name="Logout" value="الخروج" />
+
+    <text name="RegisterFormUserNameInvalidMessage" value="Please dont enter an email address for username."/>
+
+    <text name="Users" value="المستخدمون" />
+    <text name="IsActive" value="هل نشطة" />
+    <text name="FullName" value="الاسم الكامل" />
+    <text name="CreateNewUser" value="إنشاء مستخدم جديد" />
+    <text name="Yes" value="نعم فعلا" />
+    <text name="No" value="لا" />
+    <text name="Optional" value="اختياري" />
+  </texts>
+</localizationDictionary>

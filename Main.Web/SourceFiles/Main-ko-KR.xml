@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="ko-KR">
+  <texts>
+    <text name="HomePage" value="홈 페이지" />
+    <text name="About" value="정보" />
+    <text name="WelcomeMessage" value="Main에 오신 것을 환영합니다!" />
+    
+    <text name="FormIsNotValidMessage" value="양식이 유효하지 않습니다. 오류를 확인하고 수정하십시오." />
+
+    <text name="InvalidUserNameOrPassword" value="잘못된 사용자 이름 또는 암호" />
+    <text name="UserIsNotActiveAndCanNotLogin" value="사용자 {0}이 (가) 활성화되어 로그인 할 수 없습니다." />
+    <text name="PleaseEnterLoginInformation" value="로그인 정보를 입력하십시오" />
+    <text name="UserNameOrEmail" value="사용자 이름 또는 이메일" />
+    <text name="Password" value="비밀번호" />
+    <text name="RememberMe" value="기억하기" />
+    <text name="LogIn" value="로그인" />
+
+    <text name="LoginFailed" value="로그인에 실패했습니다!" />
+
+    <text name="NameSurname" value="이름 성" />
+    <text name="UserName" value="사용자 이름" />
+    <text name="Name" value="이름" />
+    <text name="Surname" value="성" />
+    <text name="EmailAddress" value="이메일 주소" />
+
+    <text name="SavedSuccessfully" value="성공적으로 저장되었습니다" />
+    <text name="AdminEmailAddress" value="Admin email address" />
+    <text name="Save" value="저장" />
+    <text name="Cancel" value="취소" />
+    <text name="Register" value="등록" />
+    <text name="OrLoginWith" value="Or login with" />
+    <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+    <text name="Logout" value="로그 아웃" />
+
+    <text name="RegisterFormUserNameInvalidMessage" value="사용자 이름에 이메일 주소를 입력하지 마십시오."/>
+
+    <text name="DatabaseConnectionString" value="Database connection string" />
+    <text name="Users" value="Users" />
+    <text name="IsActive" value="활성" />
+    <text name="FullName" value="새 사용자 만들기" />
+    <text name="CreateNewUser" value="Create new user" />
+    <text name="Yes" value="예" />
+    <text name="No" value="아니오" />
+    <text name="Optional" value="선택 사항" />
+  </texts>
+</localizationDictionary>

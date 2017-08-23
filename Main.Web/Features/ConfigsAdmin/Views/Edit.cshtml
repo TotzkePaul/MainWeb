@@ -1,0 +1,73 @@
+﻿@model ConfigViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@Html.Partial("Admin/AdminMenu", "ConfigsAdmin")
+
+
+<h2>Edit.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Edit Config Form.</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.SettingName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.SettingName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SettingName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SettingValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.SettingValue, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SettingValue)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SettingType, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.SettingType, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SettingType)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Timestamp, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Timestamp, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Timestamp)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(m => m.IsActive, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IsActive)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

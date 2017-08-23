@@ -1,0 +1,39 @@
+﻿@using Main.Data.Core.Domain
+@model Main.Data.Core.Domain.ApplicationUser
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@Html.Partial("Admin/AdminMenu", "Admin")
+
+<h2>User Details</h2>
+
+@Html.LabelFor(m => m.Id): @Html.DisplayFor(m => m.Id) <br />
+@Html.LabelFor(m => m.AccessFailedCount): @Html.DisplayFor(m => m.AccessFailedCount) <br />
+@Html.LabelFor(m => m.ConcurrencyStamp): @Html.DisplayFor(m => m.ConcurrencyStamp) <br />
+@Html.LabelFor(m => m.Email): @Html.DisplayFor(m => m.Email) <br />
+@Html.LabelFor(m => m.EmailConfirmed): @Html.DisplayFor(m => m.EmailConfirmed) <br />
+@Html.LabelFor(m => m.PasswordHash): @Html.DisplayFor(m => m.PasswordHash) <br />
+@Html.LabelFor(m => m.TwoFactorEnabled): @Html.DisplayFor(m => m.TwoFactorEnabled) <br />
+@Html.LabelFor(m => m.UserName): @Html.DisplayFor(m => m.UserName) <br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>ClaimType</th>
+            <th>ClaimValue</th>
+            <th>UserId</th>
+        </tr>
+    </thead>
+    <tbody>
+    @for (int i = 0; i < Model.Claims.Count; i++)
+    {
+        <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].Id)           </tr>
+        <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].ClaimType)    </tr>
+        <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].ClaimValue)   </tr>
+        <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].UserId)       </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,77 @@
+@using System.Threading.Tasks
+@using Main.Web.Features.Admin.Models
+@model Main.Web.Features.Admin.Models.LogsModel
+
+@{
+    ViewData["Title"] = "Logs";
+}
+
+@Html.Partial("Admin/AdminMenu", "Logs")
+
+<h2>Logs</h2>
+
+<form asp-action="Logs">
+    <div class="form-horizontal">
+        <h4>LogsModel</h4>
+        <br />
+        <div>
+            @Html.LabelFor(x=>x.ClearLogsDate):
+            @Html.EditorFor(m => m.ClearLogsDate)
+            <button class="btn btn-primary">Submit</button>
+        </div>
+        <br/>
+        <div class="form-group">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>ExceptionType</th>
+                            <th>Message</th>
+                            <th>Server</th>
+                            <th>Timestamp</th>
+                            <th>Username</th>
+                            <th>IsHandled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Logs.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].ExceptionType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].Message)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].Server)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].Timestamp)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => m.Logs[i].IsHandled)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

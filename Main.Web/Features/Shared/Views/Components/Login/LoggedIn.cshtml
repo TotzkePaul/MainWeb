@@ -1,0 +1,25 @@
+﻿@model Main.Data.Core.Domain.ApplicationUser
+
+<form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="form-inline my-2 my-lg-0">
+    <ul class="navbar-nav mr-auto text-center">
+        <li  class="nav-item">
+            <a  class="nav-link"  asp-area="" asp-controller="Admin" asp-action="Index" title="Config">
+                <i class="fa fa-tachometer fa-2x"></i>
+                <p class="outline">Admin</p>
+            </a>
+        </li>
+        <li  class="nav-item">
+            <a class="nav-link"  asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">
+                <i class="fa fa-cog fa-2x"></i>
+                <p class="outline">Settings</p>
+                    
+            </a>
+        </li>
+        <li  class="nav-item">
+            <button type="submit" class="btn btn-link nav-link">
+                <i class="fa fa-sign-out fa-2x"></i>
+                <p class="outline">Log out</p>
+            </button>
+        </li>
+    </ul>
+</form>

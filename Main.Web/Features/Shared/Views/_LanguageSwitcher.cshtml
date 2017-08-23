@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Localization
+@await Component.InvokeAsync("LanguageSwitcher")
+
+    <script type='text/javascript'>
+        function useCookie(code) {{
+            var culture = code;
+            var uiCulture = code;
+            var cookieValue = '@CookieRequestCultureProvider.DefaultCookieName=c='+code+'|uic='+code+'; Path=/;';
+            document.cookie = cookieValue;
+            window.location.reload();
+        }}
+    </script>

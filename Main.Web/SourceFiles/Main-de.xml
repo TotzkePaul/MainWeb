@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="de">
+  <texts>
+    <text name="HomePage" value="Startseite" />
+    <text name="About" value="Über" />
+    <text name="WelcomeMessage" value="Willkommen bei Main!" />
+    
+    <text name="FormIsNotValidMessage" value="Formular ist nicht gültig. Bitte überprüfen und beheben Fehler." />
+    
+
+    <text name="InvalidUserNameOrPassword" value="Ungültiger Benutzername oder Passwort" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="Benutzer {0} ist nicht aktiv und kann sich nicht anmelden." />
+    <text name="PleaseEnterLoginInformation" value="Bitte geben Sie die Anmeldeinformationen ein" />
+    
+    <text name="UserNameOrEmail" value="Benutzername oder E-Mail-Adresse" />
+    <text name="Password" value="Passwort" />
+    <text name="RememberMe" value="Erinnere dich an mich" />
+    <text name="LogIn" value="Einloggen" />
+
+    <text name="LoginFailed" value="Anmeldung fehlgeschlagen!" />
+
+    <text name="NameSurname" value="Vorname Familienname" />
+    <text name="UserName" value="Benutzername" />
+    <text name="Name" value="Name" />
+    <text name="Surname" value="Familien-oder Nachname" />
+    <text name="EmailAddress" value="E-Mail-Addresse" />
+
+    <text name="SavedSuccessfully" value="Erfolgreich gespeichert" />
+    <text name="AdminEmailAddress" value="Admin email address" />
+    <text name="Save" value="Speichern" />
+    <text name="Cancel" value="Stornieren" />
+    <text name="Register" value="Neu registrieren" />
+    <text name="OrLoginWith" value="Oder melden Sie sich mit" />
+    <text name="WaitingForActivationMessage" value="Ihr Konto wartet darauf, von System-Administrator aktiviert zu werden." />
+
+    <text name="Logout" value="Ausloggen" />
+
+    <text name="RegisterFormUserNameInvalidMessage" value=""/>
+
+    <text name="Users" value="Benutzer" />
+    <text name="IsActive" value="Ist aktiv" />
+    <text name="FullName" value="Vollständiger Name" />
+    <text name="CreateNewUser" value="Neuen Benutzer erstellen" />
+    <text name="Yes" value="Ja" />
+    <text name="No" value="Nein" />
+    <text name="Optional" value="Optional" />
+  </texts>
+</localizationDictionary>

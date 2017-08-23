@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+<div class="container">
+    <br class="hidden-sm hidden-xs" />
+    <div class="row text-center">
+        <div class="col-3">
+            <a class="footer-link" href="#">
+                <i class="fa fa-eye fa-1x"></i> Privacy Policy
+            </a>
+        </div>
+        <div class="col-3">
+            <a class="footer-link" href="#">
+                <i class="fa fa-bug fa-1x"></i>Report Bug
+            </a>
+        </div>
+        <div class="col-3">
+            <a class="footer-link" href="#">
+                <i class="fa fa-copyright fa-1x"></i>@DateTime.Now.Year - Main.Web
+            </a>
+        </div>
+        <div class="col-3">@Html.Partial("_LanguageSwitcher")</div>
+    </div>
+    <br class="hidden-md hidden-sm hidden-xs"/>
+</div>

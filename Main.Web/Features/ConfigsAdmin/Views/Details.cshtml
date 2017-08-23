@@ -1,0 +1,57 @@
+﻿@model ConfigViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@Html.Partial("Admin/AdminMenu", "ConfigsAdmin")
+
+<h2>Details.</h2>
+<div>
+    <h4>Config</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SettingValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SettingValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SettingType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Timestamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

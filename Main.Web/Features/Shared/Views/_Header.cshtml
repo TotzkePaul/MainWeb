@@ -1,0 +1,50 @@
+﻿@using Main.Web.Features.Home
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+
+@{
+    Layout = null;
+}
+
+@inject IStringLocalizer<HomeController> Localizer
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand text-center">
+                <i class="fa fa-snowflake-o fa-2x hidden-md-down"></i>
+                <p class="outline">Main.Web</p>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa fa-snowflake-o fa-2x"></i>
+                            <p class="outline">@Localizer["HomePage"]</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">
+                            <i class="fa fa-user-secret fa-2x"></i>
+                            <p class="outline">@Localizer["About"]</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                            <i class="fa fa-comment-o fa-2x"></i>
+                            <p class="outline">@Localizer["RememberMe"]</p>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">@Localizer["Search"]</button>
+                </form>
+
+                @await Html.PartialAsync("_Login")
+            </div>
+        </div>
+    </nav>

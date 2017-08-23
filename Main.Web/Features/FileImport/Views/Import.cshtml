@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Import";
+}
+
+<h2>Import</h2>
+
+<form method="post" asp-action="Import" asp-controller="FileImport" enctype="multipart/form-data">
+    <input type="file" name="files" multiple />
+    <input type="submit" value="Upload" />
+</form>

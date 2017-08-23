@@ -5,7 +5,7 @@
     <DockerTargetOS>Windows</DockerTargetOS>
     <ProjectGuid>48f08bb5-1dfc-4c04-8e6c-24b4a4810894</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://{ServiceIPAddress}/https://localhost:44304/</DockerServiceUrl>
+    <DockerServiceUrl>http://{ServiceIPAddress}</DockerServiceUrl>
     <DockerServiceName>main.web</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

@@ -1,0 +1,92 @@
+﻿.flag-icon-background {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.flag-icon {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    width: 2.66666666em;
+    line-height: 2.5em;
+}
+
+    .flag-icon:before {
+        content: "\00a0";
+    }
+
+    .flag-icon.flag-icon-squared {
+        width: 1em;
+    }
+
+.flag-icon-en-US {
+    background-image: url(../lib/flag-icon-css/flags/4x3/us.svg);
+}
+
+.flag-icon-en-GB {
+    background-image: url(../lib/flag-icon-css/flags/4x3/gb.svg);
+}
+
+.flag-icon-en-AU {
+    background-image: url(../lib/flag-icon-css/flags/4x3/au.svg);
+}
+
+.flag-icon-zh-CN {
+    background-image: url(../lib/flag-icon-css/flags/4x3/cn.svg);
+}
+
+.flag-icon-zh-TW {
+    background-image: url(../lib/flag-icon-css/flags/4x3/tw.svg);
+}
+
+.flag-icon-zh-HK {
+    background-image: url(../lib/flag-icon-css/flags/4x3/hk.svg);
+}
+
+.flag-icon-es {
+    background-image: url(../lib/flag-icon-css/flags/4x3/es.svg);
+}
+
+.flag-icon-fr {
+    background-image: url(../lib/flag-icon-css/flags/4x3/fr.svg);
+}
+
+.flag-icon-hi-IN {
+    background-image: url(../lib/flag-icon-css/flags/4x3/in.svg);
+}
+
+.flag-icon-ar {
+    background-image: url(../images/Arab_League_Flag.svg);
+}
+
+.flag-icon-pt-BR {
+    background-image: url(../lib/flag-icon-css/flags/4x3/br.svg);
+}
+
+.flag-icon-ko-KR {
+    background-image: url(../lib/flag-icon-css/flags/4x3/kr.svg);
+}
+
+.flag-icon-ta-IN {
+    background-image: url(../lib/flag-icon-css/flags/4x3/in.svg);
+}
+
+.flag-icon-ru-RU {
+    background-image: url(../lib/flag-icon-css/flags/4x3/ru.svg);
+}
+
+.flag-icon-de-DE {
+    background-image: url(../lib/flag-icon-css/flags/4x3/de.svg);
+}
+
+.flag-icon-ja-JP {
+    background-image: url(../lib/flag-icon-css/flags/4x3/jp.svg);
+}
+
+body:after {
+    display: none;
+    content: url(../lib/flag-icon-css/flags/4x3/us.svg) url(../lib/flag-icon-css/flags/4x3/gb.svg) url(../lib/flag-icon-css/flags/4x3/au.svg) url(../lib/flag-icon-css/flags/4x3/cn.svg) url(../lib/flag-icon-css/flags/4x3/tw.svg) url(../lib/flag-icon-css/flags/4x3/hk.svg) url(../lib/flag-icon-css/flags/4x3/es.svg) url(../lib/flag-icon-css/flags/4x3/fr.svg) url(../lib/flag-icon-css/flags/4x3/in.svg) url(../images/Arab_League_Flag.svg) url(../lib/flag-icon-css/flags/4x3/br.svg) url(../lib/flag-icon-css/flags/4x3/sk.svg) url(../lib/flag-icon-css/flags/4x3/in.svg) url(../lib/flag-icon-css/flags/4x3/ru.svg) url(../lib/flag-icon-css/flags/4x3/de.svg) url(../lib/flag-icon-css/flags/4x3/jp.svg)
+}

@@ -1,0 +1,83 @@
+﻿@using Main.Web.Features.Admin.Models
+@model Main.Web.Features.Admin.Models.ConfigsModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@Html.Partial("Admin/AdminMenu", "Configs")
+
+<h2>Configs</h2>
+@Html.ActionLink("Admin","Index")
+<div>
+    @using (Html.BeginForm())
+    { 
+        <div>
+            <div class="form-group row">
+                <div class="col-2 text-right">@Html.LabelFor(m => m.SelectedConfig.Id):</div><div class="col-10"> @Html.TextBoxFor(m => m.SelectedConfig.Id, new {@class="form-control"})</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2 text-right">@Html.LabelFor(m => m.SelectedConfig.SettingName):</div><div class="col-10"> @Html.TextBoxFor(m => m.SelectedConfig.SettingName, new { @class = "form-control" })</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2 text-right">@Html.LabelFor(m => m.SelectedConfig.SettingValue):</div><div class="col-10"> @Html.TextBoxFor(m => m.SelectedConfig.SettingValue, new { @class = "form-control" })</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2 text-right">@Html.LabelFor(m => m.SelectedConfig.SettingType):</div><div class="col-10"> @Html.TextBoxFor(m => m.SelectedConfig.SettingType, new { @class = "form-control" })</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2 text-right">@Html.LabelFor(m => m.SelectedConfig.IsActive):</div><div class="col-10"> @Html.TextBoxFor(m => m.SelectedConfig.IsActive, new { @class = "form-control" })</div>
+            </div>
+        </div>
+
+        <div>
+            @Html.ValidationSummary()
+        </div>
+    <button class="btn btn-primary">Submit</button>        
+    }
+    
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Type</th>
+            <th>IsActive</th>
+            <th>Edit</th>
+            <th>Disable</th>
+        </tr>
+    </thead>
+    <tbody>
+    @for (int i = 0; i < Model.Configs.Count; i++)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => m.Configs[i].Id)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Configs[i].SettingName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Configs[i].SettingValue)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Configs[i].SettingType)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Configs[i].IsActive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Config", "Admin", new {Id = Model.Configs[i].Id})
+            </td>
+            <td>
+                @Html.ActionLink("Disable", "DeleteConfig", "Admin", new {Id = Model.Configs[i].Id})
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@model ConfigsModel
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@Html.Partial("Admin/AdminMenu", "Configs")
+
+<h2>Disable Config</h2>
+@Html.ActionLink("Admin", "Config")
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <div>@Html.LabelFor(m => m.SelectedConfig.Id) : @Html.TextBoxFor(m => m.SelectedConfig.Id)</div>
+            <div>@Html.LabelFor(m => m.SelectedConfig.SettingName) : @Html.TextBoxFor(m => m.SelectedConfig.SettingName)</div>
+            <div>@Html.LabelFor(m => m.SelectedConfig.SettingValue) : @Html.TextBoxFor(m => m.SelectedConfig.SettingValue)</div>
+            <div>@Html.LabelFor(m => m.SelectedConfig.SettingType) : @Html.TextBoxFor(m => m.SelectedConfig.SettingType)</div>
+            <div>@Html.LabelFor(m => m.SelectedConfig.IsActive) : @Html.TextBoxFor(m => m.SelectedConfig.IsActive)</div>
+        </div>
+        <div>
+            @Html.ValidationSummary()
+        </div>
+        <input class="btn btn-warning" type="submit" value="Disable" formaction="DisableConfig" />
+        @Html.ActionLink("Delete", "DeleteConfig", "Admin", new { id = Model.SelectedConfig.Id } ,new { @class="btn btn-danger" })
+    }
+
+</div>

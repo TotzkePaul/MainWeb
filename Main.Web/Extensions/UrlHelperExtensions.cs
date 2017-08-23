@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Main.Web.Controllers;
+using Main.Web.Features.Account;
 
 namespace Microsoft.AspNetCore.Mvc
 {

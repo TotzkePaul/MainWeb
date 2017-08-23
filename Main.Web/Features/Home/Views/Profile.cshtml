@@ -1,0 +1,49 @@
+﻿@model Dictionary<string, string[]>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+
+<table>
+    @foreach (KeyValuePair<string, string[]> kvp in Model)
+    {
+        <tr>
+            <td>@kvp.Key</td>
+            @foreach (var value in kvp.Value)
+            {
+                <td>
+                    @value
+                </td>
+            }
+        </tr>
+    }
+
+</table>
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                @foreach (var header in Model.First())
+                {
+                    <th>
+                        @header
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model.Skip(1))
+            {
+                <tr>
+                    @foreach (var cell in row)
+                    {
+                        <td style="word-wrap: normal;min-width: 40px;max-width: 40px;">@cell</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

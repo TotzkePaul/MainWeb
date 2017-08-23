@@ -1,0 +1,110 @@
+@model MarkdownModel
+
+@{
+    ViewData["Title"] = "Markdown";
+}
+
+<h2>Markdown</h2>
+<form method="post" asp-controller="FileImport" asp-action="Markdown" enctype="multipart/form-data">
+    @{ ViewBag.mdcss = " mt-0 mb-0"; }
+    @{ ViewBag.mdcss2 = "px-2 py-0 small "; }
+
+    <p>@Model.MarkdownText?.Length</p>
+    <br />
+    <input id="fullscreenhack" type="checkbox" />
+    <div class="fullscreen">
+        <div class="card ">
+            <div class="card-header p-2">
+                <div class="btn-toolbar d-flex justify-content-start">
+                    <div class="@ViewBag.mdcss btn-group mr-2" role="group">
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Bold (Ctrl+B)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdBold" data-hotkey="Ctrl+B">
+                            <span class="fa fa-bold" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Italic (Ctrl+I)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdItalic" data-hotkey="Ctrl+I">
+                            <span class="fa fa-italic" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Heading (Ctrl+H)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdHeading" data-hotkey="Ctrl+H">
+                            <span class="fa fa-header" />
+                        </button>
+                    </div>
+                    <div class="@ViewBag.mdcss btn-group mr-2">
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="URL/Link (Ctrl+L)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdUrl" data-hotkey="Ctrl+L">
+                            <span class="fa fa-link" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Image (Ctrl+G)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdImage" data-hotkey="Ctrl+G">
+                            <span class="fa fa-picture-o" />
+                        </button>
+                    </div>
+                    <div class="@ViewBag.mdcss btn-group mr-2">
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Unordered List (Ctrl+U)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdList" data-hotkey="Ctrl+U">
+                            <span class="fa fa-list" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Ordered List (Ctrl+O)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdListO" data-hotkey="Ctrl+O">
+                            <span class="fa fa-list-ol" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Code (Ctrl+K)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdCode" data-hotkey="Ctrl+K">
+                            <span class="fa fa-code" />
+                        </button>
+                        <button class="btn btn-secondary @ViewBag.mdcss2" type="button" title="Quote (Ctrl+Q)" tabindex="-1" data-provider="bootstrap-markdown" data-handler="bootstrap-markdown-cmdQuote" data-hotkey="Ctrl+Q">
+                            <span class="fa fa-quote-left" />
+                        </button>
+                    </div>
+                    <div class="ml-auto @ViewBag.mdcss p-0">
+                        <label for="fullscreenhack" class="btn btn-primary">
+                            <span class="fa fa-expand" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-block">
+                <textarea class="form-control col-12 " asp-for="MarkdownText"></textarea>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Preview
+            </div>
+            <div class="card-block">
+                <div id="MarkdownPreview"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Actual
+            </div>
+            <div class="card-block">
+                @Html.Raw(Model.MarkdownHtml)
+            </div>
+        </div>
+        <button class="btn btn-danger" type="submit">Submit</button>
+    </div>
+</form>
+
+@section scripts
+{
+    <script src="~/lib/commonmark/dist/commonmark.js"></script>
+    <script>
+        $(document).ready(function () {
+            var globalTimeout = null;
+
+            $("#MarkdownText").keyup(function () {
+                if (globalTimeout != null) {
+                    clearTimeout(globalTimeout);
+                }
+                var markdown = this.value;
+                globalTimeout = setTimeout(function () {
+                    globalTimeout = null;
+
+                    var reader = new commonmark.Parser();
+                    var writer = new commonmark.HtmlRenderer();
+                    var parsed = reader.parse(markdown); // parsed is a 'Node' tree
+                    var result = writer.render(parsed); // result is a String
+
+                    $("#MarkdownPreview").html(result);
+                }, 200);
+
+            });
+            $("#MarkdownText").keyup();
+        });
+    </script>
+}

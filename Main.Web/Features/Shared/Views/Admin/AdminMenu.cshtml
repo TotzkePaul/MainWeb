@@ -1,0 +1,10 @@
+﻿@model string
+<br/>
+<ul class="nav nav-tabs">
+    <li role="presentation" class="nav-item" ><a class="@(Model == "Admin" ? "nav-link active" : "nav-link")"asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+    <li role="presentation" class="nav-item" ><a class="@(Model == "UsersAdmin" ? "nav-link active" : "nav-link")" asp-area="" asp-controller="UsersAdmin" asp-action="Index">User Manager</a></li>
+    <li role="presentation" class="nav-item" ><a class="@(Model == "RolesAdmin" ? "nav-link active" : "nav-link")" asp-area="" asp-controller="RolesAdmin" asp-action="Index">Role Manager</a></li>
+    <li role="presentation" class="nav-item" ><a  class="@(Model == "ConfigsAdmin" ? "nav-link active" : "nav-link")" asp-area="" asp-controller="ConfigsAdmin" asp-action="Index">Configs Manager</a></li>
+    <li role="presentation" class="nav-item" ><a class="@(Model == "Configs" ? "nav-link active" : "nav-link")" asp-area="" asp-controller="Admin" asp-action="Config">Configs</a></li>
+    <li role="presentation" class="nav-item" ><a class="@(Model == "Logs" ? "nav-link active" : "nav-link")" asp-area="" asp-controller="Admin" asp-action="Logs">Logs</a></li>
+</ul>

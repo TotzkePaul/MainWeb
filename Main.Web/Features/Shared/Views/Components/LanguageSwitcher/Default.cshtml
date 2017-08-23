@@ -1,0 +1,16 @@
+﻿@model Main.Web.Models.LanguageSwitcherModel
+
+
+<ul class='nav navbar-nav navbar-right'>
+    <li class='dropup'>
+        <a href='#' class='dropdown-toggle footer-link' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>
+            <span class='flag-icon flag-icon-@Model.SelectedCulture.Name'></span> @Model.SelectedCulture.NativeName<span class='caret'></span>
+        </a>
+        <ul class='dropdown-menu'>
+            @foreach (var language in Model.SupportedCultures)
+            {
+                <li><a class='language-item' style="display: inline-block; width: 100%; height: 100%;" href='#' onclick="useCookie('@language.Name')"><span class='flag-icon flag-icon-@language.Name'></span> @language.NativeName</a></li>
+            }
+        </ul>
+    </li>
+</ul>

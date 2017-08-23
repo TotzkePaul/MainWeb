@@ -1,0 +1,48 @@
+﻿@using System.Threading.Tasks
+@using Main.Data.Core.Domain
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto text-center">
+            <li  class="nav-item">
+                <a  class="nav-link"  asp-area="" asp-controller="Admin" asp-action="Index" title="Config">
+                    <i class="fa fa-tachometer fa-2x"></i>
+                    <p class="outline">Admin</p>
+                </a>
+            </li>
+            <li  class="nav-item">
+                <a class="nav-link"  asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">
+                    <i class="fa fa-cog fa-2x"></i>
+                    <p class="outline">@*UserManager.GetUserName(User)*@Settings</p>
+                    
+                </a>
+            </li>
+            <li  class="nav-item">
+                <button type="submit" class="btn btn-link nav-link">
+                    <i class="fa fa-sign-out fa-2x"></i>
+                    <p class="outline">Log out</p>
+                </button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">
+                <i class="fa fa-user-plus fa-2x"></i>
+                <p class="outline">Register</p>
+            </a></li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">
+                <i class="fa fa-sign-in fa-2x"></i>
+                <p class="outline">Log in</p>
+            </a></li>
+    </ul>
+}
