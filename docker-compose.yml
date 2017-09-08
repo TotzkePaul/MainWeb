@@ -1,8 +1,23 @@
 version: '3'
 
+networks:
+  default:
+    external:
+      name: nat
+
 services:
   main.web:
     image: main.web
     build:
       context: ./Main.Web
       dockerfile: Dockerfile
+    depends_on:
+     - "postgres"
+
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Pa55w01d
+
