@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   main.web:
@@ -6,7 +6,4 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-networks:
-  default:
-    external:
-      name: nat
+
