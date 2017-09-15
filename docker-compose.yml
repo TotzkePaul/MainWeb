@@ -12,7 +12,7 @@ services:
   main.web:
     image: main.web
     ports:
-       - 80:80
+       - 8080:80
     build:
       context: ./Main.Web
       dockerfile: Dockerfile

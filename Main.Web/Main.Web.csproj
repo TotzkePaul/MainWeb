@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" PrivateAssets="All" />
@@ -24,6 +25,10 @@
     <ProjectReference Include="..\CommonMark.Core\CommonMark.Core.csproj" />
     <ProjectReference Include="..\Main.Core\Main.Core.csproj" />
     <ProjectReference Include="..\Main.Data\Main.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Account\Views\" />
   </ItemGroup>
 
 </Project>

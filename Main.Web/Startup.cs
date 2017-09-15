@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Reflection;
 using Main.Core.Localization;
 using Main.Data;
 using Main.Data.Core.Domain;
@@ -60,6 +61,12 @@ namespace Main.Web
                 // Add support for localizing strings in data annotations (e.g. validation messages) via the
                 // IStringLocalizer abstractions.
                 .AddDataAnnotationsLocalization();
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
 
             services.Configure<RequestLocalizationOptions>(options =>
@@ -121,6 +128,10 @@ namespace Main.Web
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
+
+                Assembly assembly = Assembly.Load(new AssemblyName(env.ApplicationName));
+                var b = (assembly != (Assembly) null);
+
             }
             else
             {
