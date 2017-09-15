@@ -1,10 +1,14 @@
 version: '2'
 
-networks:
-  mynetwork:
-     driver: bridge
-
 services:
+  postgres:
+    container_name: 'postgres'
+    image: postgres
+    restart: always
+    ports:
+       - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: Pa55w01d
   main.web:
     image: main.web
     ports:
@@ -14,15 +18,3 @@ services:
       dockerfile: Dockerfile
     depends_on:
      - "postgres"
-
-  postgres:
-    container_name: 'postgres'
-    image: postgres
-    restart: always
-    ports:
-       - 5432:5432
-    environment:
-      POSTGRES_PASSWORD: Pa55w01d
-    networks:
-       - mynetwork
-
