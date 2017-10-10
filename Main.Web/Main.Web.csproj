@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Features\Account\Views\" />
+    <Folder Include="Features\Manage\Models\" />
   </ItemGroup>
 
 </Project>

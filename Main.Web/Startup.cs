@@ -28,9 +28,24 @@ namespace Main.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        ////public Startup(IConfiguration configuration)
+        ////{
+        ////    Configuration = configuration;
+        ////}
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("/.microsoft/usersecrets/918f68d1-483b-46d1-8556-717af3673207/secrets.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true); 
+
+            if (env.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>(optional:false);
+            }
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -128,9 +143,14 @@ namespace Main.Web
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
+                
 
-                Assembly assembly = Assembly.Load(new AssemblyName(env.ApplicationName));
-                var b = (assembly != (Assembly) null);
+                //Assembly assembly = Assembly.Load(new AssemblyName(env.ApplicationName));
+                //var b = (assembly != (Assembly) null);
+                //if (assembly != null)
+                //{
+                    
+                //}
 
             }
             else
