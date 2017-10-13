@@ -20,7 +20,7 @@
     "Main.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "commandLineArgs": "arg1=value1",
+      "commandLineArgs": "arg1=value1 --port=8080",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

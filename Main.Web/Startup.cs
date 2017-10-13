@@ -28,25 +28,25 @@ namespace Main.Web
 {
     public class Startup
     {
-        ////public Startup(IConfiguration configuration)
-        ////{
-        ////    Configuration = configuration;
-        ////}
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile("/.microsoft/usersecrets/918f68d1-483b-46d1-8556-717af3673207/secrets.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true); 
-
-            if (env.IsDevelopment())
-            {
-                builder.AddUserSecrets<Startup>(optional:false);
-            }
-
-            Configuration = builder.Build();
+            Configuration = configuration;
         }
+        //public Startup(IHostingEnvironment env)
+        //{
+        //    var builder = new ConfigurationBuilder()
+        //        .SetBasePath(env.ContentRootPath)
+        //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+        //        .AddJsonFile("/.microsoft/usersecrets/918f68d1-483b-46d1-8556-717af3673207/secrets.json", optional: true, reloadOnChange: true)
+        //        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true); 
+
+        //    if (env.IsDevelopment())
+        //    {
+        //        builder.AddUserSecrets<Startup>(optional:false);
+        //    }
+
+        //    Configuration = builder.Build();
+        //}
 
         public IConfiguration Configuration { get; }
 
