@@ -31,6 +31,8 @@ namespace Main.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            Console.WriteLine(string.Join(",",configuration.AsEnumerable(false).Select(x => x.Key + ", " + x.Value + ";").ToList()));
         }
         //public Startup(IHostingEnvironment env)
         //{
@@ -144,13 +146,7 @@ namespace Main.Web
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
                 
-
-                //Assembly assembly = Assembly.Load(new AssemblyName(env.ApplicationName));
-                //var b = (assembly != (Assembly) null);
-                //if (assembly != null)
-                //{
-                    
-                //}
+                
 
             }
             else

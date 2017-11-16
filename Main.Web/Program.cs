@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.CommandLine;
 using Microsoft.Extensions.Logging;
 
 namespace Main.Web
@@ -23,6 +24,7 @@ namespace Main.Web
             var bindingConfig = new ConfigurationBuilder()
                 .AddCommandLine(args)
                 .Build();
+            
             var serverport = bindingConfig.GetValue<int?>("port") ?? 80;
             var serverurls = bindingConfig.GetValue<string>("server.urls") ?? string.Format("http://*:{0}", serverport);
 
