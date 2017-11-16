@@ -1,4 +1,4 @@
-﻿@using Main.Data.Core.Domain
+﻿
 @model Main.Data.Core.Domain.ApplicationUser
 
 @{
@@ -28,12 +28,12 @@
         </tr>
     </thead>
     <tbody>
-    @for (int i = 0; i < Model.Claims.Count; i++)
+    @*@for (int i = 0; i < Model..claims.Claims.Count; i++)
     {
         <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].Id)           </tr>
         <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].ClaimType)    </tr>
         <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].ClaimValue)   </tr>
         <tr>@Html.DisplayFor(x => x.Claims.ToList()[i].UserId)       </tr>
-    }
+    }*@
     </tbody>
 </table>
