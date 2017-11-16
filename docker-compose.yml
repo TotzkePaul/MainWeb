@@ -11,8 +11,6 @@ services:
     image: main.web
     ports:
        - 8080:80
-    volumes:
-      - C:\Users\TOTPA\AppData\Roaming\Microsoft\UserSecrets\:/.microsoft/usersecrets/
     build:
       context: ./Main.Web
       dockerfile: Dockerfile

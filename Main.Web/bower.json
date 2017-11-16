@@ -8,6 +8,7 @@
     "jquery-validation-unobtrusive": "3.2.6",
     "font-awesome": "4.7.0",
     "flag-icon-css": "~2.8.0",
-    "commonmark":  "0.27.0" 
+    "commonmark": "0.27.0",
+    "qrcode.js": "qrcode-js#*"
   }
 }
